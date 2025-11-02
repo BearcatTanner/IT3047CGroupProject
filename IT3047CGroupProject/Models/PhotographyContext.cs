@@ -40,6 +40,46 @@ namespace IT3047CGroupProject.Models
                     CameraPrice = 1998.00m,
                     CameraDescription = "A popular full-frame mirrorless camera known for its speed and performance."
                 });
+
+            modelBuilder.Entity<Category>().HasData(
+                new Category
+                {
+                    CategoryId = 1,
+                    CategoryName = "Landscape"
+                },
+                new Category
+                {
+                    CategoryId = 2,
+                    CategoryName = "Portrait"
+                },
+                new Category
+                {
+                    CategoryId = 3,
+                    CategoryName = "Wildlife"
+                });
+
+            modelBuilder.Entity<Location>().HasData(
+                new Location
+                {
+                    LocationId = 1,
+                    LocationName = "Yosemite National Park",
+                    LocationDescription = "A stunning location known for its waterfalls and granite cliffs.",
+                    CategoryId = 1
+                },
+                new Location
+                {
+                    LocationId = 2,
+                    LocationName = "Central Park",
+                    LocationDescription = "A popular urban park perfect for portrait photography.",
+                    CategoryId = 2
+                },
+                new Location
+                {
+                    LocationId = 3,
+                    LocationName = "Serengeti National Park",
+                    LocationDescription = "A prime location for capturing wildlife in their natural habitat.",
+                    CategoryId = 3
+                });
         }
     }
 }
